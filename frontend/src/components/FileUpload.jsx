@@ -6,15 +6,9 @@ import { motion } from "framer-motion";
 import { Upload, FileText } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-interface FileUploadProps {
-  onFileSelect: (file: File) => void;
-  file: File | null;
-  isLoading?: boolean;
-}
-
-export function FileUpload({ onFileSelect, file, isLoading }: FileUploadProps) {
+export function FileUpload({ onFileSelect, file, isLoading }) {
   const onDrop = useCallback(
-    (acceptedFiles: File[]) => {
+    (acceptedFiles) => {
       if (acceptedFiles.length > 0) {
         onFileSelect(acceptedFiles[0]);
       }

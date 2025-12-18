@@ -5,21 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, AlertCircle, AlertTriangle, Info } from "lucide-react";
 
-interface Improvement {
-  section: string;
-  original: string;
-  suggested: string;
-  reason: string;
-  severity: "low" | "medium" | "high";
-  keywords_added: string[];
-}
-
-interface ImprovementCardProps {
-  improvement: Improvement;
-  index: number;
-}
-
-export function ImprovementCard({ improvement, index }: ImprovementCardProps) {
+export function ImprovementCard({ improvement, index }) {
   const severityConfig = {
     high: { icon: AlertCircle, color: "text-red-500", bg: "bg-red-500/10" },
     medium: { icon: AlertTriangle, color: "text-yellow-500", bg: "bg-yellow-500/10" },

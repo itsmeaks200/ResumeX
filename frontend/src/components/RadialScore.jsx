@@ -2,19 +2,12 @@
 
 import { motion } from "framer-motion";
 
-interface RadialScoreProps {
-  score: number;
-  size?: number;
-  strokeWidth?: number;
-  label?: string;
-}
-
-export function RadialScore({ score, size = 120, strokeWidth = 8, label = "ATS Score" }: RadialScoreProps) {
+export function RadialScore({ score, size = 120, strokeWidth = 8, label = "ATS Score" }) {
   const radius = (size - strokeWidth) / 2;
   const circumference = radius * 2 * Math.PI;
   const offset = circumference - (score / 100) * circumference;
 
-  const getColor = (score: number) => {
+  const getColor = (score) => {
     if (score >= 80) return "#22c55e";
     if (score >= 60) return "#eab308";
     return "#ef4444";

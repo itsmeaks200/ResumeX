@@ -3,11 +3,7 @@
 import { motion } from "framer-motion";
 import { Loader2 } from "lucide-react";
 
-interface LoadingOverlayProps {
-  message?: string;
-}
-
-export function LoadingOverlay({ message = "Processing..." }: LoadingOverlayProps) {
+export function LoadingOverlay({ message = "Processing..." }) {
   return (
     <motion.div
       initial={{ opacity: 0 }}

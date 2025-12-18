@@ -1,6 +1,6 @@
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
-export async function parseResume(file: File) {
+export async function parseResume(file) {
   const formData = new FormData();
   formData.append("file", file);
 
@@ -17,7 +17,7 @@ export async function parseResume(file: File) {
   return response.json();
 }
 
-export async function analyzeJD(jdText: string) {
+export async function analyzeJD(jdText) {
   const response = await fetch(`${API_URL}/api/jd/analyze`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -32,7 +32,7 @@ export async function analyzeJD(jdText: string) {
   return response.json();
 }
 
-export async function matchResumeJD(resume: any, jd: any) {
+export async function matchResumeJD(resume, jd) {
   const response = await fetch(`${API_URL}/api/match`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -47,7 +47,7 @@ export async function matchResumeJD(resume: any, jd: any) {
   return response.json();
 }
 
-export async function getImprovements(resume: any, jd: any, match: any) {
+export async function getImprovements(resume, jd, match) {
   const response = await fetch(`${API_URL}/api/improve`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -62,7 +62,7 @@ export async function getImprovements(resume: any, jd: any, match: any) {
   return response.json();
 }
 
-export async function fullAnalysis(file: File, jdText: string) {
+export async function fullAnalysis(file, jdText) {
   const formData = new FormData();
   formData.append("file", file);
   formData.append("jd_text", jdText);
@@ -80,7 +80,7 @@ export async function fullAnalysis(file: File, jdText: string) {
   return response.json();
 }
 
-export async function searchJobs(file: File) {
+export async function searchJobs(file) {
   const formData = new FormData();
   formData.append("file", file);
 
@@ -97,7 +97,7 @@ export async function searchJobs(file: File) {
   return response.json();
 }
 
-export async function searchJobsFromParsed(resume: any) {
+export async function searchJobsFromParsed(resume) {
   const response = await fetch(`${API_URL}/api/jobs/search-from-parsed`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },

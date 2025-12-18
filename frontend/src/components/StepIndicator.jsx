@@ -1,21 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-interface Step {
-  id: string;
-  label: string;
-}
-
-interface StepIndicatorProps {
-  steps: Step[];
-  currentStep: string;
-  onStepClick?: (stepId: string) => void;
-}
-
-export function StepIndicator({ steps, currentStep, onStepClick }: StepIndicatorProps) {
+export function StepIndicator({ steps, currentStep, onStepClick }) {
   const currentIndex = steps.findIndex((s) => s.id === currentStep);
 
   return (

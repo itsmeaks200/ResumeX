@@ -7,22 +7,7 @@ import { SkillBar } from "./SkillBar";
 import { SkillChips } from "./SkillChips";
 import { Target, TrendingUp, AlertTriangle } from "lucide-react";
 
-interface MatchResult {
-  ats_score: number;
-  skill_overlap_percent: number;
-  matched_skills: string[];
-  missing_skills: string[];
-  keyword_coverage: number;
-  experience_match: string;
-  strengths: string[];
-  gaps: string[];
-}
-
-interface MatchDashboardProps {
-  match: MatchResult;
-}
-
-export function MatchDashboard({ match }: MatchDashboardProps) {
+export function MatchDashboard({ match }) {
   return (
     <motion.div
       initial={{ opacity: 0 }}

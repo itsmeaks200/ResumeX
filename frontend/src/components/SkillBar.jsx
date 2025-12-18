@@ -2,13 +2,7 @@
 
 import { motion } from "framer-motion";
 
-interface SkillBarProps {
-  label: string;
-  value: number;
-  color?: string;
-}
-
-export function SkillBar({ label, value, color = "bg-primary" }: SkillBarProps) {
+export function SkillBar({ label, value, color = "bg-primary" }) {
   return (
     <div className="space-y-1">
       <div className="flex justify-between text-sm">

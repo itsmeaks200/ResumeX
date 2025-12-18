@@ -6,24 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { MapPin, Building2, ExternalLink, DollarSign } from "lucide-react";
 
-interface JobPosting {
-  title: string;
-  company: string;
-  location: string;
-  url: string;
-  salary: string;
-  description: string;
-  match_score: number;
-  source: string;
-}
-
-interface JobCardProps {
-  job: JobPosting;
-  index: number;
-}
-
-export function JobCard({ job, index }: JobCardProps) {
-  const getMatchColor = (score: number) => {
+export function JobCard({ job, index }) {
+  const getMatchColor = (score) => {
     if (score >= 80) return "bg-green-500";
     if (score >= 60) return "bg-yellow-500";
     return "bg-red-500";

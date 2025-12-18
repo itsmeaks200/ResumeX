@@ -4,12 +4,7 @@ import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Check, X } from "lucide-react";
 
-interface SkillChipsProps {
-  matched: string[];
-  missing: string[];
-}
-
-export function SkillChips({ matched, missing }: SkillChipsProps) {
+export function SkillChips({ matched, missing }) {
   return (
     <div className="space-y-4">
       <div>

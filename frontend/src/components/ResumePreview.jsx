@@ -5,30 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Mail, Phone, MapPin, Linkedin, GraduationCap, Briefcase, Code, Award } from "lucide-react";
 
-interface ResumeData {
-  name: string;
-  email: string;
-  phone: string;
-  linkedin: string;
-  location: string;
-  summary: string;
-  education: any[];
-  experience: any[];
-  projects: any[];
-  skills: {
-    languages: string[];
-    frameworks: string[];
-    tools: string[];
-    soft_skills: string[];
-  };
-  certifications: string[];
-}
-
-interface ResumePreviewProps {
-  data: ResumeData;
-}
-
-export function ResumePreview({ data }: ResumePreviewProps) {
+export function ResumePreview({ data }) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -127,7 +104,7 @@ export function ResumePreview({ data }: ResumePreviewProps) {
                 </p>
                 {exp.bullets && (
                   <ul className="mt-2 text-sm space-y-1">
-                    {exp.bullets.map((b: string, j: number) => (
+                    {exp.bullets.map((b, j) => (
                       <li key={j} className="text-muted-foreground">• {b}</li>
                     ))}
                   </ul>

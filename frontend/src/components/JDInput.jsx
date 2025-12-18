@@ -6,14 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { FileSearch, Loader2 } from "lucide-react";
 
-interface JDInputProps {
-  value: string;
-  onChange: (value: string) => void;
-  onAnalyze: () => void;
-  isLoading: boolean;
-}
-
-export function JDInput({ value, onChange, onAnalyze, isLoading }: JDInputProps) {
+export function JDInput({ value, onChange, onAnalyze, isLoading }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}

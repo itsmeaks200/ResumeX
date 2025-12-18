@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { parseResume, analyzeJD, matchResumeJD, getImprovements, searchJobsFromParsed } from "@/lib/api";
-import { ArrowRight, Upload, FileText, Target, Sparkles, Briefcase, RotateCcw } from "lucide-react";
+import { ArrowRight, FileText, Target, Sparkles, Briefcase, RotateCcw } from "lucide-react";
 
 const STEPS = [
   { id: "upload", label: "Upload" },
@@ -49,7 +49,7 @@ export default function Home() {
     }
   }, [darkMode]);
 
-  const handleFileSelect = async (file: File) => {
+  const handleFileSelect = async (file) => {
     setResumeFile(file);
     setIsLoading(true);
     setError(null);
@@ -58,7 +58,7 @@ export default function Home() {
       const result = await parseResume(file);
       setResumeData(result.data);
       setCurrentStep("jd");
-    } catch (err: any) {
+    } catch (err) {
       setError(err.message);
     } finally {
       setIsLoading(false);
@@ -82,7 +82,7 @@ export default function Home() {
       setImprovements(improveRes.data);
 
       setCurrentStep("analysis");
-    } catch (err: any) {
+    } catch (err) {
       setError(err.message);
     } finally {
       setIsLoading(false);
@@ -99,7 +99,7 @@ export default function Home() {
       const result = await searchJobsFromParsed(resumeData);
       setJobs(result.data.jobs || []);
       setCurrentStep("jobs");
-    } catch (err: any) {
+    } catch (err) {
       setError(err.message);
     } finally {
       setIsLoading(false);
@@ -123,7 +123,7 @@ export default function Home() {
             onStepClick={(step) => {
               const stepIndex = STEPS.findIndex((s) => s.id === step);
               const currentIndex = STEPS.findIndex((s) => s.id === currentStep);
-              if (stepIndex <= currentIndex) setCurrentStep(step as any);
+              if (stepIndex <= currentIndex) setCurrentStep(step);
             }}
           />
         </div>
