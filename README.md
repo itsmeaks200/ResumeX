@@ -36,7 +36,7 @@ Agent            Agent    Agent    Agent
 
 ### Frontend
 - Next.js 14 (App Router)
-- TypeScript
+- JavaScipt
 - Tailwind CSS + ShadCN UI
 - Framer Motion (animations)
 - Zustand (state management)
